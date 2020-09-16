@@ -87,16 +87,16 @@ function getTime() {
 function getTimeWordsEN(time) {
 	// Midday
 	if (parseInt(time.h, 10) === 12 && parseInt(time.m, 10) === 0) {
-		return `midday`;
+		return `middag`;
 	}
 	// Midnight
 	if (parseInt(time.h, 10) === 0 && parseInt(time.m, 10) === 0) {
-		return `midnight`;
+		return `nacht`;
 	}
 
 	// One minute past [hour]
 	if (parseInt(time.m, 10) === 1) {
-		return `one minute past ${hourIntToWord(time.h)}`;
+		return `een minuut na ${hourIntToWord(time.h)}`;
 	}
 
 	// [minutes >= 12] past [hour]
@@ -109,19 +109,19 @@ function getTimeWordsEN(time) {
 		case 0:
 			return `${hourIntToWord(time.h)} o'clock`;
 		case 15:
-			return `quarter past ${hourIntToWord(time.h)}`;
+			return `kwart over  ${hourIntToWord(time.h)}`;
 		case 20:
-			return `twenty past ${hourIntToWord(time.h)}`;
+			return `twintig over ${hourIntToWord(time.h)}`;
 		case 30:
-			return `half past ${hourIntToWord(time.h)}`;
+			return `half ${hourIntToWord(time.h)}`;
 		case 40:
-			return `twenty to ${hourIntToWord(time.h + 1)}`;
+			return `twintig voor ${hourIntToWord(time.h + 1)}`;
 		case 45:
-			return `quarter to ${hourIntToWord(time.h + 1)}`;
+			return `kwart voor ${hourIntToWord(time.h + 1)}`;
 		case 50:
-			return `ten to ${hourIntToWord(time.h + 1)}`;
+			return `tien voor ${hourIntToWord(time.h + 1)}`;
 		case 55:
-			return `five to ${hourIntToWord(time.h + 1)}`;
+			return `vijf voor ${hourIntToWord(time.h + 1)}`;
 	}
 
 	// No special case, just [hour] [minutes]
@@ -133,40 +133,40 @@ function hourIntToWord(int) { // eslint-disable-line complexity
 		case 0:
 		case 24: // Next hour + 1, twenty, quarter, ten, five to.
 		case 12:
-			return 'twelve';
+			return 'twaalf';
 		case 1:
 		case 13:
-			return 'one';
+			return 'een';
 		case 2:
 		case 14:
-			return 'two';
+			return 'twee';
 		case 3:
 		case 15:
-			return 'three';
+			return 'drie';
 		case 4:
 		case 16:
-			return 'four';
+			return 'vier';
 		case 5:
 		case 17:
-			return 'five';
+			return 'vijf';
 		case 6:
 		case 18:
-			return 'six';
+			return 'zes';
 		case 7:
 		case 19:
-			return 'seven';
+			return 'zeven';
 		case 8:
 		case 20:
-			return 'eight';
+			return 'acht';
 		case 9:
 		case 21:
-			return 'nine';
+			return 'negen';
 		case 10:
 		case 22:
-			return 'ten';
+			return 'tien';
 		case 11:
 		case 23:
-			return 'eleven';
+			return 'elf';
 	}
 }
 
@@ -184,57 +184,57 @@ function minutesIntToWord(int) {
 function baseIntToWord(int) {
 	switch (parseInt(int, 10)) { // eslint-disable-line default-case
 		case 1:
-			return 'one';
+			return 'een';
 		case 2:
-			return 'two';
+			return 'twee';
 		case 3:
-			return 'three';
+			return 'drie';
 		case 4:
-			return 'four';
+			return 'vier';
 		case 5:
-			return 'five';
+			return 'vijf';
 		case 6:
-			return 'six';
+			return 'zes';
 		case 7:
-			return 'seven';
+			return 'zeven';
 		case 8:
-			return 'eight';
+			return 'acht';
 		case 9:
-			return 'nine';
+			return 'negen';
 		case 10:
-			return 'ten';
+			return 'tien';
 		case 11:
-			return 'eleven';
+			return 'elf';
 		case 12:
-			return 'twelve';
+			return 'twaalf';
 		case 13:
-			return 'thirteen';
+			return 'dertien';
 		case 14:
-			return 'fourteen';
+			return 'veertien';
 		case 15:
-			return 'fifteen';
+			return 'vijftien';
 		case 16:
-			return 'sixteen';
+			return 'zestien';
 		case 17:
-			return 'seventeen';
+			return 'zeventien';
 		case 18:
-			return 'eighteen';
+			return 'achttien';
 		case 19:
-			return 'nineteen';
+			return 'negentien';
 	}
 }
 
 function tensIntToWord(int) {
 	switch (parseInt(int, 10)) { // eslint-disable-line default-case
 		case 10:
-			return 'ten';
+			return 'tien';
 		case 20:
-			return 'twenty';
+			return 'twintig';
 		case 30:
-			return 'thirty';
+			return 'dertig';
 		case 40:
-			return 'forty';
+			return 'veertig';
 		case 50:
-			return 'fifty';
+			return 'vijftig';
 	}
 }
